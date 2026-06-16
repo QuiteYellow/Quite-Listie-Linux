@@ -1,8 +1,7 @@
 # Quite Listie - Linux (GNOME)
 
 Native GNOME (GTK4 + libadwaita + libshumate) port of Quite Listie for managing
-lists, with file-based collaboration and Nextcloud sync. Shares a platform-agnostic
-Rust `core` crate with the Apple apps.
+lists, with file-based collaboration and Nextcloud sync.
 
 > Also available on Apple platforms: **[Quite Listie for iOS, iPadOS and macOS](https://github.com/QuiteYellow/Quite-Listie)** (SwiftUI). Both apps share the `.listie` file format and Nextcloud sync, so lists move between them.
 
