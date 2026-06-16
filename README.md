@@ -6,6 +6,9 @@ Rust `core` crate with the Apple apps.
 
 > Also available on Apple platforms: **[Quite Listie for iOS, iPadOS and macOS](https://github.com/QuiteYellow/Quite-Listie)** (SwiftUI). Both apps share the `.listie` file format and Nextcloud sync, so lists move between them.
 
+<img width="2748" height="1214" alt="Screenshot From 2026-06-16 11-06-10" src="https://github.com/user-attachments/assets/414e5711-bb0f-40b7-a5a2-2c282efbe9c4" />
+<img width="2748" height="1214" alt="Screenshot From 2026-06-16 11-05-38" src="https://github.com/user-attachments/assets/76320275-011c-4bf8-982b-d2bd68d5e25f" />
+
 ## Features
 
 ### Two Ways to Store Lists
