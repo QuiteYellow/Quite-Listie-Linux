@@ -24,6 +24,22 @@ if desktop_file_validate.found()
   )
 endif
 
+# --- AppStream metainfo ---
+metainfo_file = app_id + '.metainfo.xml'
+install_data(
+  metainfo_file,
+  install_dir: datadir / 'metainfo',
+)
+
+appstreamcli = find_program('appstreamcli', required: false)
+if appstreamcli.found()
+  test(
+    'validate-metainfo',
+    appstreamcli,
+    args: ['validate', '--no-net', '--explain', meson.current_source_dir() / metainfo_file],
+  )
+endif
+
 # --- D-Bus service (desktop entry is DBusActivatable) ---
 service_conf = configuration_data()
 service_conf.set('bindir', bindir)

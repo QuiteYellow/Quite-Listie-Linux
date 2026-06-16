@@ -6,6 +6,10 @@ __pycache__/
 # Flatpak build cache + fetched generator (cargo-sources.json IS committed).
 /.flatpak-builder/
 /build-aux/flatpak-cargo-generator.py
+# Flatpak release build output (export repo, build tree, bundle artifact).
+/.flatpak-repo/
+/builddir-flatpak/
+/*.flatpak
 
 # Local reference checkouts of upstream KDE projects (best-practice study).
 # See memory `kde_reference_checkouts` for what's here and how to use it.
@@ -16,3 +20,4 @@ __pycache__/
 
 # Repomap tool cache (local).
 /.repomap.tags.cache.v1/
+.claude/

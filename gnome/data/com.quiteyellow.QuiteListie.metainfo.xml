@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.quiteyellow.QuiteListie</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Quite Listie</name>
+  <summary>Lists and checklists that sync with Nextcloud</summary>
+
+  <description>
+    <p>
+      Quite Listie manages lists and checklists with file-based collaboration
+      and Nextcloud sync. It is the native GNOME edition, sharing the .listie
+      file format and Nextcloud sync with the iOS, iPadOS and macOS apps, so
+      lists move between platforms.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Open .listie files directly, or sync lists over Nextcloud (WebDAV)</li>
+      <li>Offline-first sync with three-way merge and automatic conflict resolution</li>
+      <li>List, per-list map, global locations map, kanban, and markdown preview views</li>
+      <li>Colour-coded labels, quantity tracking, and markdown notes on items</li>
+      <li>Due-date reminders with Today and Scheduled smart boxes and desktop notifications</li>
+      <li>Pin items to locations and open them on a map</li>
+      <li>Markdown import and export, and shareable deeplinks</li>
+      <li>Recycle bin with auto-delete</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.quiteyellow.QuiteListie.desktop</launchable>
+
+  <developer id="com.quiteyellow">
+    <name>Quite Yellow</name>
+  </developer>
+
+  <url type="homepage">https://github.com/QuiteYellow/Quite-Listie-Linux</url>
+  <url type="bugtracker">https://github.com/QuiteYellow/Quite-Listie-Linux/issues</url>
+  <url type="vcs-browser">https://github.com/QuiteYellow/Quite-Listie-Linux</url>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>list</keyword>
+    <keyword>todo</keyword>
+    <keyword>checklist</keyword>
+    <keyword>tasks</keyword>
+    <keyword>shopping</keyword>
+    <keyword>nextcloud</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <!--
+    Flathub requires at least one screenshot. Add hosted PNG/JPEG URLs here, e.g.:
+    <screenshots>
+      <screenshot type="default">
+        <image>https://.../quite-listie-list.png</image>
+        <caption>List view</caption>
+      </screenshot>
+    </screenshots>
+  -->
+
+  <releases>
+    <release version="0.1.0" date="2026-06-16"/>
+  </releases>
+</component>
