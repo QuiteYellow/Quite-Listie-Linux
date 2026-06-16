@@ -1,0 +1,18 @@
+/target
+/builddir
+__pycache__/
+*.pyc
+
+# Flatpak build cache + fetched generator (cargo-sources.json IS committed).
+/.flatpak-builder/
+/build-aux/flatpak-cargo-generator.py
+
+# Local reference checkouts of upstream KDE projects (best-practice study).
+# See memory `kde_reference_checkouts` for what's here and how to use it.
+/references/
+
+# Upstream Swift source app, cloned for reference parity (not part of the build)
+/reference/
+
+# Repomap tool cache (local).
+/.repomap.tags.cache.v1/

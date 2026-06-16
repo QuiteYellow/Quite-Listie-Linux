@@ -1,0 +1,6 @@
+[submodule "gnome/data/icons"]
+	path = gnome/data/icons
+	url = https://git.jackandkata.com/wire-keepers/Quite-Listie-icons
+[submodule "docs"]
+	path = docs
+	url = https://git.jackandkata.com/wire-keepers/Quite-Listie-Linux-notes

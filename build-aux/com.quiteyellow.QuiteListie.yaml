@@ -1,0 +1,82 @@
+# Flatpak manifest for the GNOME front-end.
+#
+# Build:   flatpak-builder --user --install --force-clean .flatpak-builder/build build-aux/com.quiteyellow.QuiteListie.yaml
+# Run:     flatpak run com.quiteyellow.QuiteListie
+#
+# Before building you must vendor the Rust crates (the build sandbox has no
+# network):  ./build-aux/flatpak-cargo-gen.sh
+# That regenerates build-aux/cargo-sources.json from Cargo.lock.
+#
+# The `quite-listie` module sources the working tree (type: dir, path: ..), so the
+# private `gnome/data/icons` submodule must be checked out first
+# (`git submodule update --init`) or meson's icon install step fails. A clone without
+# access to that private submodule must drop equivalent PNGs into
+# gnome/data/icons/linux/hicolor/<size>/apps/ before building.
+app-id: com.quiteyellow.QuiteListie
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: quite-listie
+
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+  # Nextcloud WebDAV sync, OSM/VersaTiles map tiles, Nominatim geocoding.
+  - --share=network
+  # core/ raises desktop notifications over D-Bus (zbus).
+  - --talk-name=org.freedesktop.Notifications
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  env:
+    # cargo-sources.json populates this dir and writes a source-replacement
+    # config here, so the offline build needs no network.
+    CARGO_HOME: /run/build/quite-listie/cargo
+
+modules:
+  # libshumate is not in the GNOME runtime; build it and its vector-tile
+  # dependency chain. protobuf is build-time only (it produces protoc, used to
+  # build the protobuf-c compiler), so it is cleaned out of the final app.
+  - name: protobuf
+    buildsystem: autotools
+    config-opts:
+      - DIST_LANG=cpp
+    cleanup:
+      - '*'
+    sources:
+      - type: archive
+        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protobuf-all-3.17.3.tar.gz
+        sha256: 77ad26d3f65222fd96ccc18b055632b0bfedf295cb748b712a98ba1ac0b704b2
+
+  - name: protobuf-c
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.0/protobuf-c-1.4.0.tar.gz
+        sha256: 26d98ee9bf18a6eba0d3f855ddec31dbe857667d269bc0b6017335572f85bbcb
+
+  - name: libshumate
+    buildsystem: meson
+    config-opts:
+      - -Ddemos=false
+      - -Dgtk_doc=false
+      - -Dvapi=false
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libshumate.git
+        branch: main
+
+  - name: quite-listie
+    buildsystem: meson
+    # meson.build switches cargo to the release profile only when buildtype is
+    # 'release'; flatpak-builder otherwise leaves it at the meson default.
+    config-opts:
+      - --buildtype=release
+    sources:
+      - type: dir
+        path: ..
+      - cargo-sources.json

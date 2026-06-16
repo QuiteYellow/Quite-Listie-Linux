@@ -1,0 +1,8 @@
+# Workspace root for the Quite Listie GNOME port.
+#
+#   core/   quite-listie-core   platform-agnostic logic (shared)
+#   gnome/  quite-listie        the native GNOME (GTK4 + libadwaita) front-end
+[workspace]
+resolver = "2"
+members = ["core", "gnome"]
+default-members = ["core", "gnome"]

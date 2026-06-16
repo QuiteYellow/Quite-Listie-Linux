@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Quite Listie
+GenericName=List Manager
+Comment=Lists and checklists that sync with Nextcloud
+Type=Application
+Categories=Utility;GTK;
+# Single-binary D-Bus-activatable GNOME app.
+Exec=quite-listie %U
+Icon=com.quiteyellow.QuiteListie
+Terminal=false
+StartupNotify=true
+DBusActivatable=true
+# Open .listie files and quitelistie:// deeplinks (wired in Phase 5).
+MimeType=application/x-listie;x-scheme-handler/quitelistie;
+Keywords=list;todo;checklist;tasks;shopping;nextcloud;

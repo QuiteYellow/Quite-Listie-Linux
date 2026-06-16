@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/quiteyellow/QuiteListie">
+    <!-- Blueprint-compiled .ui files are added here by meson as the UI port lands.
+         Example (Phase 3):
+         <file compressed="true" preprocess="xml-stripblanks">ui/window.ui</file>
+    -->
+    <!-- App stylesheet (Phase 3+). -->
+    <!-- <file>style.css</file> -->
+  </gresource>
+</gresources>

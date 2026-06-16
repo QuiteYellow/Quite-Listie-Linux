@@ -1,0 +1,64 @@
+[package]
+name = "quite-listie-core"
+version = "0.1.0"
+edition = "2021"
+description = "Quite Listie — platform-agnostic core (data model, Nextcloud sync engine, utilities)"
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "quite_listie_core"
+path = "src/lib.rs"
+
+[dependencies]
+# Async
+tokio = { version = "1", features = ["full"] }
+
+# HTTP (Nextcloud WebDAV)
+reqwest = { version = "0.12", features = ["json", "stream"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Date / time
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Compression (deeplinks)
+flate2 = "1"
+
+# Markdown
+pulldown-cmark = "0.11"
+
+# D-Bus notifications
+zbus = { version = "4", features = ["tokio"] }
+futures-util = "0.3"
+
+# WebDAV XML parsing
+quick-xml = "0.36"
+
+# XDG dirs
+dirs = "5"
+
+# base64url
+base64 = "0.22"
+
+# URL parsing
+url = "2"
+
+# Open system browser (Nextcloud Login Flow v2)
+open = "5"
+
+# Error handling
+anyhow = "1"
+
+# URL encoding (Nominatim geocoding)
+urlencoding = "2"
+
+# Logging
+tracing = "0.1"
+
+# Emoji catalog (Unicode 17.0)
+emojis = "0.8"

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="com.quiteyellow.QuiteListie" path="/com/quiteyellow/QuiteListie/">
+
+    <!-- Last selected list (restored on launch). Was appSettings.lastListId. -->
+    <key name="last-list-id" type="s">
+      <default>''</default>
+      <summary>Last opened list id</summary>
+    </key>
+
+    <!-- Per-list section collapse state, JSON object. Was appSettings.sectionsJson. -->
+    <key name="sections-json" type="s">
+      <default>'{}'</default>
+      <summary>Collapsed-section state per list (JSON)</summary>
+    </key>
+
+    <!-- Favourited list ids, JSON array. Was appSettings.favouriteListIdsJson. -->
+    <key name="favourite-list-ids-json" type="s">
+      <default>'[]'</default>
+      <summary>Favourited list ids (JSON array)</summary>
+    </key>
+
+    <!-- Per-list view mode (list/kanban/map), JSON object. Was appSettings.viewModesJson. -->
+    <key name="view-modes-json" type="s">
+      <default>'{}'</default>
+      <summary>Per-list view mode (JSON)</summary>
+    </key>
+
+    <!-- Per-list background gradient selection, JSON object. -->
+    <key name="backgrounds-json" type="s">
+      <default>'{}'</default>
+      <summary>Per-list background gradient (JSON)</summary>
+    </key>
+
+    <!-- Per-list "show completed at bottom" overrides, JSON object. Lists without an
+         entry fall back to the global show-completed-at-bottom default. -->
+    <key name="completed-at-bottom-json" type="s">
+      <default>'{}'</default>
+      <summary>Per-list completed-at-bottom override (JSON)</summary>
+    </key>
+
+    <!-- Show completed items at the bottom of the list. Was setting_bool("showCompletedAtBottom"). -->
+    <key name="show-completed-at-bottom" type="b">
+      <default>false</default>
+      <summary>Show completed items at the bottom</summary>
+    </key>
+
+    <key name="hide-empty-labels" type="b">
+      <default>true</default>
+      <summary>Hide label sections that have no unchecked items</summary>
+    </key>
+
+    <!-- Sidebar: hide the seeded welcome list. Was appSettings.hideWelcomeList. -->
+    <key name="hide-welcome-list" type="b">
+      <default>false</default>
+      <summary>Hide the welcome list from the sidebar</summary>
+    </key>
+
+    <!-- Sidebar smart cards. Was appSettings.hide{Today,Scheduled,Locations}Card. -->
+    <key name="hide-today-card" type="b">
+      <default>false</default>
+      <summary>Hide the Today smart card</summary>
+    </key>
+    <key name="hide-scheduled-card" type="b">
+      <default>false</default>
+      <summary>Hide the Scheduled smart card</summary>
+    </key>
+    <key name="hide-locations-card" type="b">
+      <default>false</default>
+      <summary>Hide the Locations smart card</summary>
+    </key>
+
+    <!-- Window geometry. -->
+    <key name="window-width" type="i">
+      <default>960</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>680</default>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+    </key>
+
+  </schema>
+</schemalist>
